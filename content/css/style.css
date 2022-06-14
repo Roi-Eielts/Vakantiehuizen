@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+
+html,
+body {
+    background-color: rgb(221, 237, 253);
+}
+
+.boven {
+    margin-top: 15px;
+}
+
+.letterType {
+    font-weight: 500;
+    font-family: 'Roboto Condensed', sans-serif;
+}

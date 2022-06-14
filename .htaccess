@@ -1,0 +1,11 @@
+RewriteEngine on
+
+
+RewriteBase /vakantiehuizen
+
+RewriteRule ^home$ index.php?pagina=home
+RewriteRule ^vakantiehuizen$ index.php?pagina=vakantiehuizen
+RewriteRule ^contact$ index.php?pagina=contact
+
+ErrorDocument 403 /vakantiehuizen/index.php
+ErrorDocument 404 /vakantiehuizen/index.php
