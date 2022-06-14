@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="content/css/style.css">
     <link rel="stylesheet" href="content/css/contact_page.css">
+    <link rel="stylesheet" href="content/css/pannel.css">
 
     <!-- fancy box -->
     <link href="css/fancy.css" rel="stylesheet">
@@ -28,10 +29,15 @@
     if ($paginanaam == "home") {
         include("content/pages/home.php");
     }
-    if ($paginanaam == "vakantiehuizen") {
+    else if ($paginanaam == "vakantiehuizen") {
         include("content/pages/vakantiehuizen.php");
     }
-    if ($paginanaam == "contact") {
+    else if ($paginanaam == "contact") {
         include("content/pages/contact.php");
-    } ?>
+    } 
+    else if ($paginanaam == "admin_panel") {
+        include("content/pages/de_pannel.php");
+    }
+    ?>
+    
 </body>

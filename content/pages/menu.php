@@ -19,5 +19,10 @@ if (isset($_GET["pagina"])) {
         <a class="nav-link <?php if($pagina == "contact") { echo"active"; }?>" href="contact">contact</a>
       </li>
     </ul>
+    <ul class="navbar-nav navbar-right">
+      <li class="nav-item">
+        <a class="nav-link <?php if($pagina == "admin_panel") { echo"active"; }?>" href="admin_panel">admin pannel</a>
+      </li>
+    </ul>
   </div>
 </nav>
