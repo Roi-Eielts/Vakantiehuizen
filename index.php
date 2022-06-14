@@ -36,7 +36,10 @@
         include("content/pages/contact.php");
     } 
     else if ($paginanaam == "admin_panel") {
-        include("content/pages/de_pannel.php");
+        include("admin/de_pannel.php");
+    }
+    else if ($paginanaam == "toevoegen") {
+        include("admin/file_uploaden.php");
     }
     ?>
     
