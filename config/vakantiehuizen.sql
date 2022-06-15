@@ -13,7 +13,7 @@ primary key(id)
 
 CREATE TABLE huizen(
 id int auto_increment,
-huis text,
+huis varchar(10),
 personen int,
 omschrijving text,
 prijs float,
