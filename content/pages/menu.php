@@ -21,7 +21,7 @@ if (isset($_GET["pagina"])) {
     </ul>
     <ul class="navbar-nav navbar-right">
       <li class="nav-item">
-        <a class="nav-link <?php if($pagina == "admin_panel") { echo"active"; }?>" href="admin_panel">admin pannel</a>
+        <a class="nav-link <?php if($pagina == "admin_panel" || $pagina == "toevoegen" || $pagina == "edit") { echo"active"; }?>" href="admin_panel">admin pannel</a>
       </li>
     </ul>
   </div>
