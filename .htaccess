@@ -8,7 +8,7 @@ RewriteRule ^vakantiehuizen$ index.php?pagina=vakantiehuizen
 RewriteRule ^contact$ index.php?pagina=contact
 RewriteRule ^admin_panel$ index.php?pagina=admin_panel
 RewriteRule ^toevoegen$ index.php?pagina=toevoegen
-RewriteRule ^edit$ index.php?pagina=edit
+RewriteRule ^edit$ index.php?pagina=edit [QSA]
 
 ErrorDocument 403 /index.php
 ErrorDocument 404 /index.php

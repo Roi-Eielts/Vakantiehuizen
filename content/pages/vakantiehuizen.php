@@ -10,7 +10,7 @@
         $result = $conn -> query($pageData);
         if ($result -> num_rows > 0) {
             while ($row = $result -> fetch_assoc()) {
-                echo "<div class='col-lg-3' >";
+                echo "<div class='col-lg-4' style='margin-top:40px;'>";
                 echo "<div style='float:left; width: auto; height: 200px;'>";
                 echo "<h1>".$row["huis"]."</h1>";
                 echo "<p>".$row["omschrijving"]."</p>";
@@ -22,8 +22,8 @@
             $resultaat = $conn -> query("SELECT a.* FROM afbeeldingen a where huis_id = '$row[id]'");
             while($rijtje = $resultaat -> fetch_assoc()) {
                ?>
-               <a href="content/img/<?php echo "$rijtje[afbeelding]"?>" class="group" rel="group<?php echo "$rijtje[huis_id]"?>" >
-                <img src="content/img/<?php echo "$rijtje[afbeelding]"?>" alt="<?php echo "$rijtje[afbeelding]"?>" style="width: 33%; height: 33%;float: left;"/>
+               <a href="img/<?php echo "$rijtje[afbeelding]"?>" class="group" rel="group<?php echo "$rijtje[huis_id]"?>" >
+                <img src="img/<?php echo "$rijtje[afbeelding]"?>" alt="<?php echo "$rijtje[afbeelding]"?>" style="width: 33%; height: 33%;float: left;"/>
             </a>
                <?php
            }
@@ -33,7 +33,6 @@
         }
     }?>
 
-</div>
 </div>
 <script>
 $(document).ready(function() {

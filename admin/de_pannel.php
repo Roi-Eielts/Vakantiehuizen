@@ -20,7 +20,7 @@
                 <td>$row[omschrijving]</td>
                 <td>$row[personen]</td>
                 <td>$row[prijs]</td>
-                <td><a href='edit'><i class='fas fa-edit'></i></a></td>
+                <td><a href='edit?id=$row[id]&huis=$row[huis]&oms=$row[omschrijving]&pers=$row[personen]&prijs=$row[prijs]'><i class='fas fa-edit'></i></a></td>
             </tr>
             ";
             

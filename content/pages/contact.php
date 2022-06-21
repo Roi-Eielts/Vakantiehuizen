@@ -2,7 +2,7 @@
     <?php include("content/pages/paginaTextOphalen.php"); ?>
     <div class="row">
         <div class="col-md-6">
-            <img src="content/img/cross.jpg" alt="holy cross image" style="width: 90%;">
+            <img src="img/cross.jpg" alt="holy cross image" style="width: 90%;">
         </div>
         <div class="col-md-6">
             <form id="fcf-form-id" class="fcf-form-class" method="post">

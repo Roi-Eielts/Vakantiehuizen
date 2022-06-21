@@ -1,78 +1,49 @@
+<?php
+// require("./config/config_db.php");
+// error_reporting(0);
+$id = $_GET["id"];
+$huis = $_GET["huis"];
+$oms = $_GET["oms"];
+$pers = $_GET["pers"];
+$prijs = $_GET["prijs"];
+?>
 <div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <form action="" method="POST">
-                <table style="width: 100%;">
-                    <tr>
-                        <th><select name="id_huis">
-                                <option value="" disabled selected>select id</option>
-                                <?php
-                                $sql = "SELECT * FROM huizen";
-                                $output = $conn->query($sql);
-                                if ($output->num_rows > 0) {
-                                    while ($row = $output->fetch_assoc()) {
-                                        echo "<option value='$row[id]'>$row[id]</option>";
-                                    }
-                                } ?>
-                            </select>
-                        </th>
-                    </tr>
-                    <!-- <tr>
-                        <th><input type="text" name="huis_naam" id="huis_naam" placeholder="naam van het huis" style="width: 100%; height:38px; border-radius: 5px;" required></th>
-                    </tr>
-                    <tr>
-                        <th><input type="text" name="prijs" id="prijs" placeholder="prijs van het huis" style="width: 100%; height:38px; border-radius: 5px;" required></th>
-                    </tr>
-                    <tr>
-                        <th><textarea type="text" name="beschrijving" id="beschrijving" placeholder="beschrijving" style="width: 100%; height:38px; border-radius: 5px;" required></textarea></th>
-                    </tr>
-                    <tr>
-                        <th><textarea type="text" name="ap" id="ap" placeholder="aantal personen" style="width: 100%; height:38px; border-radius: 5px;" required></textarea></th>
-                    </tr> -->
-                    <tr>
-                        <th><button type="submit" name="up" id="veupr" class="button noselect">verander/update</button></th>
-                </table>
-            </form>
-            <?php 
-            if (isset($_POST["up"])) {
-                if(!empty($_POST['id_huis'])) {
-                $id = htmlspecialchars($_POST['id_huis']);
-                echo $id;
-                } else {
-                    echo "select id";
-                }
-            }
-
-        
-                $querydb = "UPDATE `vakantiehuizen`.`huizen` SET `omschrijving` = 'dit is een mooi huisje.' WHERE (`id` = '1');"
-            ?>
-        </div>
-        <div class="col-md-6">
-            <table style="width:100%">
-                <tr>
-                    <th>id</th>
-                    <th>huis</th>
-                    <th>omschrijving</th>
-                    <th>personen</th>
-                    <th>prijs</th>
-                </tr>
-                <?php
-                $sql = "SELECT * FROM huizen";
-                $output = $conn->query($sql);
-                if ($output->num_rows > 0) {
-                    while ($row = $output->fetch_assoc()) {
-                        echo "
+    <a href="admin_panel" class="tag">ga terug naar admin pannel</a>
+    <form action="" method="POST">
+        <table style="width:50%;">
             <tr>
-                <td>$row[id]</td>
-                <td>$row[huis]</td>
-                <td>$row[omschrijving]</td>
-                <td>$row[personen]</td>
-                <td>$row[prijs]</td>
+                <th><label>huis</label></th>
+                <th><input name="huis" type="text" value="<?php echo "$huis"; ?>" style="width: 100%; height:38px; border-radius: 5px;"></th>
             </tr>
-            ";
-                    }
-                }
-                ?>
-        </div>
-    </div>
+            <tr>
+                <th><label> omschrijving</label></th>
+                <th><input name="omschrijving" value="<?php echo "$oms"; ?>" type="text" rows="6" maxlength="3000" style="width: 100%; height: 38px;border-radius: 5px;"></th>
+            </tr>
+            <tr>
+                <th><label>aantal personen</label></th>
+                <th><input name="aantalpers" value="<?php echo "$pers"; ?>" style="width: 100%; height:38px; border-radius: 5px;"></th>
+            </tr>
+            <tr>
+                <th><label>prijs</label></th>
+                <th><input name="prijs" type="text" value="<?php echo "$prijs"; ?>" style="width: 100%; height:38px; border-radius: 5px;"></th>
+            </tr>
+        </table>
+        <button type="submit" name="subm">edit de gegevens</button>
+    </form>
+    <?php
+    if (isset($_POST['subm'])) {
+        $idhuis = $id;
+        $huisnaam = htmlspecialchars($_POST['huis']);
+        $omschrijving = htmlspecialchars($_POST['omschrijving']);
+        $aanpers = htmlspecialchars($_POST['aantalpers']);
+        $prijsje = htmlspecialchars($_POST['prijs']);
+
+
+        "UPDATE `huizen` SET `huis` = `$huisnaam`, `personen` = `$aanpers`, `òmschrijving` = `$omschrijving`, `prijs` = ``$prijsje WHERE (`id` = '$idhuis');";
+
+        $resultaat = $conn->query("UPDATE `huizen` SET `huis` = '$huisnaam', `personen` = '$aanpers', `omschrijving` = '$omschrijving', `prijs` = '$prijsje' WHERE (`id` = '$idhuis');");
+
+        echo "<h1>gegenevens zijn aangepast! u kunt nu naar de admin pannel</h1>";
+    }
+    ?>
 </div>

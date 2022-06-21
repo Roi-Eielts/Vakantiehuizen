@@ -73,4 +73,4 @@ INSERT INTO `vakantiehuizen`.`afbeeldingen` (`huis_id`, `afbeelding`) VALUES ('4
 
 -- inlog
 INSERT INTO `vakantiehuizen`.`inlog` (`username`, `wachtwoord`) VALUES ('cees', '$2y$10$emsUKs2/s.DkWfcz8wEG7enudZUOi5e9c3f6mch/1nKN1Z4eg4LvO');
- 
+

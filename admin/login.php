@@ -13,14 +13,15 @@
 
         $user = $username_control->fetch_assoc();
 
-        if (password_verify($password, $user['wachtwoord'])) {
+        if ( $username == $user && password_verify($password, $user['wachtwoord'])) {
 
-            include("content/pages/de_pannel.php");
+            include("admin/de_pannel.php");
         } else {
+            include("admin/loginForm.php");
             echo "username of password is fout";
         }
     } else {
-        include("content/pages/loginForm.php");
+        include("admin/loginForm.php");
     }
     ?>
 </div>
